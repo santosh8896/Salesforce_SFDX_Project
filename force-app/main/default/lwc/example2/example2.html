@@ -1,0 +1,41 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <h3 class="slds-text-heading_medium"><lightning-icon icon-name="custom:custom85" size="small"></lightning-icon> <strong style="color:#270086; font-size:13px;"> Crearte Registration Form in Lightning Web Component (LWC) </strong></h3>
+             <br/><br/>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--small slds-m-bottom--small">
+                    <lightning-input name="firstName" class="reqInpFld" type="text" label="First Name" required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--small slds-m-bottom--small">
+                    <lightning-input name="lastName" class="reqInpFld" type="text" label="Last Name" required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--small slds-m-bottom--small">
+                <lightning-input name="email" class="reqInpFld" type="email" label="Email" pattern="[A-Za-z0-9._-]+@[a-z0-9-]+.[a-z]{2,}$" message-when-pattern-mismatch="Please enter a valid email" required></lightning-input>
+            </div>
+            <div class="slds-col slds-size_6-of-12 slds-p-horizontal--small slds-m-bottom--small">
+                <lightning-input name="phone" class="reqInpFld" type="tel" label="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}$" message-when-pattern-mismatch="Please enter a valid phone number" required></lightning-input>
+            </div>   
+            <div class="slds-col slds-size_6-of-12 slds-p-horizontal--small slds-m-bottom--small">
+                <lightning-input name="pincode" class="reqInpFld" type="number" label="Pin Code" min="1000" max="999999" message-when-range-overflow="Please enter a correct pincode" message-when-range-underflow="Please enter a correct pincode" required></lightning-input>
+            </div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--small slds-m-bottom--small">
+                    <lightning-input name="password" class="reqInpFld" type="password" label="Password" required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--small slds-m-bottom--small">
+                    <lightning-input name="company" class="reqInpFld" type="text" label="Company" required></lightning-input>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--small slds-m-bottom--small">
+                <lightning-input name="City" class="reqInpFld" type="text" label="City" required></lightning-input>
+            </div>        
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_12-of-12 slds-text-align--center">                
+                    <lightning-button variant="brand" label="Submit" onclick={submitRegAction}></lightning-button>  
+                </div>
+            </div>
+        
+        </div>
+    </lightning-card>
+    
+    </template>

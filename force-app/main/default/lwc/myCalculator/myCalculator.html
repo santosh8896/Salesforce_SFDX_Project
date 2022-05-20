@@ -1,0 +1,31 @@
+<template>
+    <div class="slds-box">
+        
+        <div class="slds-box">
+    <div>LWC Calculator </div>
+    <lightning-input type="number" name="input1" label="Enter 1st number" onchange={inputChange}></lightning-input>
+    <lightning-input type="number" name="input2" label="Enter 2nd number" onchange={inputChange}></lightning-input>
+    <div>
+    <lightning-button-group>
+    <lightning-button name="add" label="Add" onclick={calculate}></lightning-button>
+    <lightning-button name="subtract" label="Subtract" onclick={calculate}></lightning-button>
+    <lightning-button name="multiply" label="Multiply" onclick={calculate}></lightning-button>
+    <lightning-button name="divide" label="Divide" onclick={calculate}></lightning-button>
+    </lightning-button-group>
+    </div>
+    <br/>
+    {outputNumber}
+    </div>
+    <div class="slds-box">
+    <lightning-input type="checkbox" label="Show Previous Result" name="checkbox1" onchange={calculate}>
+    </lightning-input>
+    <template if:true={showOldResult}>
+    <ul>
+    <template for:each={allOutputResult} for:item="item">
+    <li key={item}>{item}</li>
+    </template>
+    </ul>
+    </template>
+    </div>
+    </div>
+    </template>

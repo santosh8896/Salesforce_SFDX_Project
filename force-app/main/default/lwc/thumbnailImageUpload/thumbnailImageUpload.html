@@ -1,0 +1,46 @@
+<template>
+    <div class="slds-box">
+        <div class="slds-box slds-grid slds-gutters">
+            <div class="slds-col">
+
+                <lightning-card title="Upload Thumbnail Image" icon-name="utility:image">
+                    <div style="margin-left:4%">
+                        <div>
+                            <lightning-input label="" name="file uploader" onchange={handleFilesChange} type="file">
+                            </lightning-input>
+                        </div><br />
+                        <div class="slds-text-body_small slds-text-color_error">{fileName}
+                            <template if:true={showLoadingSpinner}>
+                                <lightning-spinner alternative-text="Uploading......" size="medium"></lightning-spinner>
+                            </template>
+                        </div><br />
+                        <div>
+                            <template if:false={data}>
+                                <lightning-button class="slds-m-top--medium" label={UploadFile} onclick={handleSave}
+                                    variant="brand" disabled={isTrue}></lightning-button>
+                            </template>
+                            <template if:true={data}>
+                                <lightning-button class="slds-m-top--medium" label="Change Image" onclick={handleSave}
+                                    variant="brand" disabled={isTrue}></lightning-button>
+                            </template>
+
+                        </div>
+                    </div><br /><br />
+                </lightning-card>
+
+            </div>
+            <div class="slds-col">
+                <lightning-card title="Thumbnail Image of the Product" icon-name="utility:image">
+                    <div style="width: auto;">
+                        <template if:false={data}>
+                            <i class="slds-text-color_error">No image uploaded!</i>
+                        </template>
+                        <template if:true={data}>
+                            <img src={data} width="150">
+                        </template>
+                    </div>
+                </lightning-card>
+            </div>
+        </div>
+    </div>
+</template>

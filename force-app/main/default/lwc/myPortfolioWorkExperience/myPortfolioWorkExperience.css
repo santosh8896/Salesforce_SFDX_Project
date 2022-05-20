@@ -1,0 +1,7 @@
+.light {
+      padding: 5rem;
+      background-color: var(--light-theme-backgroud-color, rgb(255, 255, 255));
+      color: #17262B;
+  }
+  
+  
